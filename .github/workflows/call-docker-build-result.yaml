@@ -23,7 +23,7 @@ jobs:
 
     name: Result Call Docker Build
 
-    uses: ibrololo/.github/workflows/reusable-docker-build.yaml@master
+    uses: ibrololo/.github/workflows/call-docker-build-result.yaml@master
 
     permissions:
       contents: read
