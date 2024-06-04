@@ -9,14 +9,14 @@ on:
     # only build when important files change
     paths:
       - 'result/**'
-      - '.github/workflows/call-docker-build-result.yaml'
+      - 'ibrololo/.github/workflows/call-docker-build-result.yaml'
   pull_request:
     branches:
       - 'master'
     # only build when important files change
     paths:
       - 'result/**'
-      - '.github/workflows/call-docker-build-result.yaml'
+      - 'ibrololo/.github/workflows/call-docker-build-result.yaml'
 
 jobs:
   call-docker-build:
