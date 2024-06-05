@@ -22,7 +22,7 @@ jobs:
   call-docker-build:
     name: Result Call Docker Build
 
-    uses: ibrololo/example-voting-app/.github/workflows/reusable-docker-build.yaml@master
+    uses: ibrololo/example-voting-app/.github/workflows/call-docker-build-result.yaml@master
 
     permissions:
       contents: read
