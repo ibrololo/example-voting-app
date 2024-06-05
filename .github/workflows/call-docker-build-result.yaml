@@ -22,7 +22,7 @@ jobs:
   call-docker-build:
     name: Result Call Docker Build
 
-    uses: .github/workflows/reusable-docker-build.yaml@master
+    uses: .github/workflows/call-docker-build-result.yaml@master
 
     permissions:
       contents: read
