@@ -1,26 +1,25 @@
 name: Build Result
-# template source: https://github.com/dockersamples/.github/blob/main/templates/call-docker-build.yaml
 
 on:
-  # we want pull requests so we can build(test) but not push to image registry
+  # Trigger on push to the master branch
   push:
     branches:
       - 'master'
-    # only build when important files change
+    # Only build when important files change
     paths:
       - 'result/**'
       - '.github/workflows/call-docker-build-result.yaml'
+  # Trigger on pull requests targeting the master branch
   pull_request:
     branches:
       - 'master'
-    # only build when important files change
+    # Only build when important files change
     paths:
       - 'result/**'
       - '.github/workflows/call-docker-build-result.yaml'
 
 jobs:
   call-docker-build:
-
     name: Result Call Docker Build
 
     uses: ibrololo/.github/.github/workflows/reusable-docker-build.yaml@master
@@ -31,7 +30,6 @@ jobs:
       pull-requests: write # needed to create and update comments in PRs
     
     secrets:
-
       # Only needed if with:dockerhub-enable is true below
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
 
@@ -51,6 +49,7 @@ jobs:
       ### A list of the account/repo names for docker build. List should match what's enabled above
       ### defaults to:
       image-names: |
+        ghcr.io/ibrololo/example-voting-app-result
         ibrololo/examplevotingapp_result
       
       ### REQUIRED set rules for tagging images, based on special action syntax:
